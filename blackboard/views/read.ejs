@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./common/bootstrap_css") %>
+    <title><%= title%></title>
+</head>
+<body>
+    <%- include("./common/header") %>
+    <div class="container">
+        <br /><br /><br />
+        <%
+            if(is_valid) {
+        %>
+        <h1><%= article_title %></h1>
+        <p>작성: <%= article_writer %>, 일시: <%= article_date %></p>
+        <% } %>
+        <hr /><br />
+        <%
+            if(is_valid) {
+        %>
+        <%=article_content %>
+        <hr />
+        <h3>Tags</h3>
+        <%=article_tags %>
+        <% } else { %>
+            <h2>글을 찾을 수 없습니다.</h2>
+        <% } %>
+        
+    </div>
+
+    <%- include("./common/bootstrap_js") %>
+</body>
+</html>

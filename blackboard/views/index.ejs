@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./common/bootstrap_css") %>
+    <title><%= title%></title>
+</head>
+<body>
+    <%- include("./common/header") %>
+    <div class="container">
+        <br /><br /><br />
+        <h1><%= board_name %></h1>
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 5%">#</th>
+                <th scope="col" style="width: 55%">제목</th>
+                <th scope="col" style="width: 20%">글쓴이</th>
+                <th scope="col" style="width: 20%">날짜</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% for(let i = 0; i < articles.length; ++i) { %>
+              <tr>
+                <th scope="row"><%=i+1 %></th>
+                <td><a href="/read/<%=articles[i]._doc._id%>" style="color: white"><%=articles[i]._doc.title %></a></td>
+                <td><%=articles[i]._doc.writer %></td>
+                <td><%=moment(articles[i]._doc.created_at).format("YYYY-MM-DD hh:mm:ss") %></td>
+              </tr>
+            <% } %>
+            </tbody>
+          </table>
+    </div>
+
+    <%- include("./common/bootstrap_js") %>
+</body>
+</html>

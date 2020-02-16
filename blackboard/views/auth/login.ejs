@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("../common/bootstrap_css") %>
+    <title><%= title%></title>
+</head>
+<body>
+    <%- include("../common/header") %>
+    <div class="container">
+        <br /><br /><br />
+        <h1>사용자 로그인</h1>
+        <hr /><br />
+        
+        <a href="/auth/kakao">
+            <img src="/static/buttons/kakao_login_button.png" />
+        </a>
+    </div>
+
+    <%- include("../common/bootstrap_js") %>
+</body>
+</html>
